@@ -24,10 +24,10 @@ package exercises.array
  */
 
 fun main(){
-  runTests()
+  runTests2()
 }
 
-fun FindLongestSequenceOfConsecutives(numbers: IntArray): IntArray{
+fun findLongestSequenceOfConsecutives(numbers: IntArray): IntArray{
     if (numbers.isEmpty()) return intArrayOf()
 
     val orderedList = numbers.toList().distinct().sorted()
@@ -51,7 +51,7 @@ fun FindLongestSequenceOfConsecutives(numbers: IntArray): IntArray{
     return longest.toIntArray()
 }
 
-fun runTests() {
+fun runTests2() {
     val tests = listOf(
         intArrayOf(100, 4, 200, 1, 3, 2) to intArrayOf(1, 2, 3, 4),
         intArrayOf(9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6) to intArrayOf(3, 4, 5, 6, 7, 8, 9),
@@ -62,7 +62,7 @@ fun runTests() {
 
     for ((index, test) in tests.withIndex()) {
         val (input, expected) = test
-        val result = FindLongestSequenceOfConsecutives(input)
+        val result = findLongestSequenceOfConsecutives(input)
         println("Test ${index + 1}: input=${input.toList()} result=${result.toList()} expected=${expected.toList()}")
     }
 }
